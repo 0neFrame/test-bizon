@@ -35,7 +35,7 @@ class Api
 		let result = '';
         
 		result = template.replace(/%(\w+)%/gi, (match, value) => object[value]);
-		result = result.replaceAll(' ', '%20');
+		result = encodeURIComponent(result);
 
 		return result;
 	}
